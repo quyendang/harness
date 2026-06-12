@@ -16,6 +16,23 @@
 
 ---
 
+## [1.3.0] - 2026-06-12
+
+### Added
+
+- **Codex-first plugin packaging** — added `.codex-plugin/plugin.json` with Codex install-surface metadata, skill bundle pointer, default prompts, and asset references.
+- **Codex-native harness workflow** — rewrote `skills/harness/SKILL.md` in English around `AGENTS.md`, `.agents/skills`, `.codex/agents`, `_workspace/`, and explicit Codex subagent orchestration.
+- **Codex migration guide** — added `docs/codex-migration.md` and `skills/harness/references/claude-legacy.md` for converting Claude Code harness artifacts into Codex-native equivalents.
+- **Codex skill UI metadata** — added `skills/harness/agents/openai.yaml`.
+
+### Changed
+
+- **Primary runtime changed from Claude Code Agent Teams to Codex** — Claude packaging remains under `.claude-plugin/` as legacy compatibility, but README and quickstart now prioritize Codex plugin/skill usage.
+- Rewrote harness reference docs for Codex-native architecture patterns, orchestrator templates, skill writing, testing, QA, and examples.
+- Replaced Korean/Japanese READMEs with concise Codex-first summaries that point to English README as the source of truth.
+
+---
+
 ## [1.2.1] - 2026-04-18
 
 ### Fixed

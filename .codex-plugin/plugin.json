@@ -1,0 +1,52 @@
+{
+  "name": "harness",
+  "version": "1.3.0",
+  "description": "Codex-first team-architecture factory that turns a project or domain brief into Codex-native AGENTS.md guidance, reusable skills, optional custom agents, and subagent orchestration workflows.",
+  "author": {
+    "name": "robin",
+    "email": "revfactory@gmail.com",
+    "url": "https://github.com/revfactory"
+  },
+  "homepage": "https://github.com/revfactory/harness",
+  "repository": "https://github.com/revfactory/harness",
+  "license": "Apache-2.0",
+  "keywords": [
+    "harness",
+    "codex",
+    "codex-plugin",
+    "agent-skills",
+    "subagents",
+    "custom-agents",
+    "agents-md",
+    "orchestration",
+    "multi-agent",
+    "team-architecture-factory"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Harness",
+    "shortDescription": "Build Codex-native agent workflows",
+    "longDescription": "Harness designs Codex-native team architectures from a project or domain brief. It generates AGENTS.md pointers, repository skills, optional custom agents, workspace artifact conventions, and subagent orchestration workflows.",
+    "developerName": "revfactory",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/revfactory/harness",
+    "privacyPolicyURL": "https://github.com/revfactory/harness/blob/main/privacy.html",
+    "termsOfServiceURL": "https://github.com/revfactory/harness/blob/main/LICENSE",
+    "defaultPrompt": [
+      "Use $harness to build a Codex workflow for this repo.",
+      "Use $harness to design a multi-agent review process.",
+      "Use $harness to refactor an existing agent setup."
+    ],
+    "brandColor": "#7C6BF0",
+    "composerIcon": "./assets/harness_icon.png",
+    "logo": "./assets/harness_banner.png",
+    "screenshots": [
+      "./assets/harness_social.png"
+    ]
+  }
+}

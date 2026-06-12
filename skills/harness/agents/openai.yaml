@@ -1,0 +1,7 @@
+interface:
+  display_name: "Harness"
+  short_description: "Design Codex agent workflows"
+  default_prompt: "Use $harness to build a Codex-native multi-agent workflow for this repo."
+
+policy:
+  allow_implicit_invocation: true
