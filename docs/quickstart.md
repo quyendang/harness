@@ -12,7 +12,7 @@ This guide installs Harness as a Codex plugin or repo-local skill, then uses it 
 
 ```bash
 codex plugin marketplace add quyendang/harness
-codex plugin install harness
+codex plugin add harness --marketplace harness-marketplace
 ```
 
 Then run Codex from your target repo and ask:

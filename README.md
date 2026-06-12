@@ -50,7 +50,7 @@ your-project/
 
 ```shell
 codex plugin marketplace add quyendang/harness
-codex plugin install harness
+codex plugin add harness --marketplace harness-marketplace
 ```
 
 ### Use As A Repo Skill During Development
