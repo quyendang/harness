@@ -17,7 +17,7 @@ Harness は、プロジェクトやドメインの説明を Codex ネイティ�
 ## Quick Start
 
 ```bash
-codex plugin marketplace add revfactory/harness
+codex plugin marketplace add quyendang/harness
 codex plugin install harness
 ```
 

@@ -17,7 +17,7 @@ Harness는 프로젝트나 도메인 설명을 Codex 네이티브 워크플로�
 ## 빠른 시작
 
 ```bash
-codex plugin marketplace add revfactory/harness
+codex plugin marketplace add quyendang/harness
 codex plugin install harness
 ```
 

@@ -49,7 +49,7 @@ your-project/
 ### Install From A Marketplace
 
 ```shell
-codex plugin marketplace add revfactory/harness
+codex plugin marketplace add quyendang/harness
 codex plugin install harness
 ```
 

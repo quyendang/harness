@@ -11,7 +11,7 @@ This guide installs Harness as a Codex plugin or repo-local skill, then uses it 
 ## Option A — Install As A Plugin
 
 ```bash
-codex plugin marketplace add revfactory/harness
+codex plugin marketplace add quyendang/harness
 codex plugin install harness
 ```
 
