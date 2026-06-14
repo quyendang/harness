@@ -38,7 +38,7 @@ your-project/
 
 ## Key Features
 
-- **Codex-native packaging** — installable plugin manifest at `.codex-plugin/plugin.json`.
+- **Codex-native packaging** — GitHub marketplace metadata in `.agents/plugins/marketplace.json` points at the installable plugin package in `plugins/harness/`.
 - **Repository skills** — generated workflows live in `.agents/skills/` so Codex can discover them from the repo.
 - **Project guidance** — compact `AGENTS.md` pointers keep future Codex runs aligned without bloating context.
 - **Subagent orchestration** — fan-out/fan-in, producer-reviewer, supervisor, pipeline, expert-pool, and hierarchical delegation patterns expressed with explicit Codex subagent prompts and `_workspace/` artifacts.
@@ -46,11 +46,27 @@ your-project/
 
 ## Quick Start
 
-### Install From A Marketplace
+### Install From GitHub
 
 ```shell
-codex plugin marketplace add quyendang/harness
-codex plugin add harness --marketplace harness-marketplace
+cd /path/to/your-project
+codex plugin marketplace add quyendang/harness --ref main
+codex plugin add harness@harness-marketplace
+codex plugin list
+```
+
+The plugin installs into your Codex profile and can be used from the project where you start Codex.
+After installing or upgrading, start a new Codex thread in your target project so `$harness` is loaded.
+
+### Install From A Local Checkout
+
+Use this while editing Harness before you push changes:
+
+```shell
+git clone https://github.com/quyendang/harness.git
+cd harness
+codex plugin marketplace add "$PWD"
+codex plugin add harness@harness-marketplace
 ```
 
 ### Use As A Repo Skill During Development
@@ -81,10 +97,18 @@ Use $harness to build a Codex workflow for this repo.
 
 ```text
 harness/
-├── .codex-plugin/
-│   └── plugin.json
+├── .agents/
+│   └── plugins/
+│       └── marketplace.json
 ├── .claude-plugin/              # Legacy Claude Code packaging
 ├── assets/
+├── plugins/
+│   └── harness/
+│       ├── .codex-plugin/
+│       │   └── plugin.json
+│       ├── assets/
+│       └── skills/
+│           └── harness/
 ├── skills/
 │   └── harness/
 │       ├── SKILL.md
@@ -127,9 +151,26 @@ See [docs/codex-migration.md](docs/codex-migration.md).
 Useful validation commands:
 
 ```shell
+python3 -m json.tool .agents/plugins/marketplace.json
 python3 -m json.tool .codex-plugin/plugin.json
+python3 -m json.tool plugins/harness/.codex-plugin/plugin.json
 python3 -m json.tool .claude-plugin/plugin.json
-python3 /Users/quyen.eth/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/harness
+```
+
+Publish flow:
+
+```shell
+git status --short
+git add README.md docs/quickstart.md
+git commit -m "Document GitHub plugin installation"
+git push origin main
+```
+
+Users who already added the GitHub marketplace can refresh and reinstall:
+
+```shell
+codex plugin marketplace upgrade harness-marketplace
+codex plugin add harness@harness-marketplace
 ```
 
 ## License
